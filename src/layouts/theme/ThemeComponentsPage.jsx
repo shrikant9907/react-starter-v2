@@ -30,42 +30,56 @@ const ThemeComponentsPage = (props) => {
         <h1 className='mb-2 text-center'>Components</h1>
 
         <div className='container'>
-          <Row>
-            <Col md="6">
+   
+            <div className="w-100 mb-5">
+              <h4>Input Field</h4>
               <InputField value="Code Matra" placeholder="Enter a value" label="Input Label" />
-            </Col>
-            <Col md="6">
+            </div>
+
+            <div className="w-100 mb-5">
+              <h4>Email Field</h4>
               <EmailField required={true} value="" placeholder="Enter a email" label="Email Label" />
-            </Col>
-            {/* <Col md="6">
-              <CurrencyField placeholder="Enter a value" label="Currency Input Label" />
-            </Col> */}
-            <Col md="6">
+            </div>
+
+            <div className="w-100 mb-5">
+              <h4>Date Picker Field</h4>
               <DatePickerField defaultValue="today" label="Date Picker Label" />
-            </Col>
-            <Col md="6">
+            </div>
+            
+            <div className="w-100 mb-5">
+              <h4>Time Picker Field</h4>
               <TimePickerField label="Time Picker Label" />
-            </Col>
-            <Col md="6">
+            </div>
+
+            <div className="w-100 mb-5">
+              <h4>Select Field</h4>
               <SelectField options={options} label="Select Options Label" />
-            </Col>
-            <Col md="6">
+            </div>
+
+            <div className="w-100 mb-5">
+              <h4>Checkbox</h4>
               <Checkbox label="Check Box" />
-            </Col>
-            <Col md="6">
+            </div>
+
+            <div className="w-100 mb-5">
+              <h4>Radio Button</h4>
               <RadioButton label="Radio Box" />
-            </Col>
-            <Col md="6">
+            </div>
+
+            <div className="w-100 mb-5">
+              <h4>Text Area Field</h4>
               <TextAreaField value="Code Matra Test" placeholder="Enter a value" label="Text Area Label" />
-            </Col>
-            <Col md="6">
+            </div>
+
+            <div className="w-100 mb-5">
+              <h4>Basic Table</h4>
               <BasicTable
-                heading="Basic Table"
+                heading="Heading"
                 head = {["Col1", "Col2", "Col3"]}
                 data = {[["val1", "val2", "val3"], ["val1", "val2", "val3"]]}
               />
-            </Col>
-          </Row>
+            </div>
+      
         </div>
 
       </div>
