@@ -7,10 +7,10 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 
 import { Link } from "react-router-dom";
-import Image from "../images/Images";
 import { TopMenusLinks } from '../../_config/TopMenus';
+import Image from '../Image/Image';
 
-class BsNavbar extends Component {
+class SiteNavbar extends Component {
 
   constructor(props) {
     super(props);
@@ -72,4 +72,4 @@ class BsNavbar extends Component {
   }
 }
 
-export default BsNavbar;
+export default SiteNavbar;

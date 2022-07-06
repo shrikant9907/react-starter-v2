@@ -1,5 +1,5 @@
 import React from "react";
-import Image from '../../images/Images';
+import Image from '../../Image/Image';
 import CustomLink from "../Link/Link";
 
 const BasicCard = (props) => {

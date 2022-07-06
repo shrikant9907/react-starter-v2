@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import './Banner.scss';
 import BannerImg from "../../_assets/images/banner/banner.jpg"; 
 
-const Banner = (props) => {
+const BannerSection = (props) => {
   return (
     <>
       <div className="banner-card">
@@ -18,4 +18,4 @@ const Banner = (props) => {
   )
 }
 
-export default Banner;
+export default BannerSection;
