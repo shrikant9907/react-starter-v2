@@ -26,6 +26,34 @@ https://github.com/shrikant9907/react-starter.git
 It will open the project on default port: 
 http://localhost:3000/
 
+### Structure
+```
+root/
+---> public
+---> src/
+--------> _actions
+--------> _actionTypes
+--------> _assets
+--------> _config
+--------> _data
+--------> _reducers
+--------> _services
+--------> _utils
+--------> components
+--------> examples
+--------> layouts
+--------> App.js
+--------> App.scss
+--------> index.js
+--------> index.scss
+--------> store.js
+---> .env.production
+---> .env.development
+---> changes.log
+---> .gitignore
+---> README.md
+```
+
 ## Created By:
 Shrikant Yadav <br />
 Full Stack Web Developer from India <br />
