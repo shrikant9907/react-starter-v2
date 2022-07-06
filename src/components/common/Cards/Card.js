@@ -2,8 +2,8 @@ import React, { Component, Fragment } from "react";
 import './Card.css';
 
 import BasicCard from './basic/Basic';
-import TestimonialCard from './testimonial/Testimonial';
-import IconCard from './iconcard/IconCard';
+import TestimonialCard from './TestimonialCard/TestimonialCard';
+import IconCard from './IconCard/IconCard';
 import PricingCard from './pricing/PricingCard';
 
 class Card extends Component {

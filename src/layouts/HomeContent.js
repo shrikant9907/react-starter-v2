@@ -1,6 +1,5 @@
 import React, { Component} from "react";
-import './Home.css';
-
+ 
 // import AddPerson from '../../../example/AddPerson';
 // import PersonList from '../../../example/PersonList';
 import PersonById from '../../../example/PersonById';
