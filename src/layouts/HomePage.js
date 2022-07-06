@@ -1,7 +1,6 @@
-import './Home.scss';
 import React from 'react';
 
-const Home = (props) => {
+const HomePage = (props) => {
   return (
     <>
       <div className='py-3 text-center'>
@@ -12,4 +11,4 @@ const Home = (props) => {
   )
 }
 
-export default Home;
+export default HomePage;

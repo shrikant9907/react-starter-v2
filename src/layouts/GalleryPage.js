@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import PhotoGallery from '../../components/gallery/photoGallery'; 
+import PhotoGallery from '../components/gallery/photoGallery'; 
 
-export default class Gallery extends Component {
+export default class GalleryPage extends Component {
   render() {
     return (
       <>
