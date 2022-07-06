@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Checkbox from '../../components/common/Form/CheckBox/CheckBox';
-import CurrencyField from '../../components/common/Form/CurrencyField';
+// import CurrencyField from '../../components/common/Form/CurrencyField'; // Not supported in 18 
 import DatePickerField from '../../components/common/Form/DatePickerField';
 import EmailField from '../../components/common/Form/EmailField';
 import InputField from '../../components/common/Form/InputField';
@@ -24,7 +24,6 @@ const ThemeComponentsPage = (props) => {
     }
   ];
 
-
   return (
     <>
       <div className='py-3'>
@@ -38,9 +37,9 @@ const ThemeComponentsPage = (props) => {
             <Col md="6">
               <EmailField required={true} value="" placeholder="Enter a email" label="Email Label" />
             </Col>
-            <Col md="6">
+            {/* <Col md="6">
               <CurrencyField placeholder="Enter a value" label="Currency Input Label" />
-            </Col>
+            </Col> */}
             <Col md="6">
               <DatePickerField defaultValue="today" label="Date Picker Label" />
             </Col>

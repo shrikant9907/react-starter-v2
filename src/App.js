@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import BsNavbar from './components/navbar/Navbar';
+import { TopMenusRoutes } from './_config/TopMenus';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <BsNavbar brandname="React Starter Logo" logotype="text" logosrc="" />
+      <Routes>
+        {/* Top Menu Routes Configuration is in _config/TopMenus.js */}
+        {
+          TopMenusRoutes && TopMenusRoutes.map((route, ridx) => {
+            return <Route {...route} key={ridx} />
+          })
+        }
+      </Routes>
+    </Router>
   );
 }
-
 export default App;

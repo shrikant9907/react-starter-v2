@@ -44,7 +44,7 @@ const InputField = ({
           onKeyDown={onKeyDown}
           placeholder={placeholder ? placeholder : ''}
         />
-        {value !==undefined && value !== "" && (value.length == maxLength) && <small className="text-info">Max length reached.</small>} 
+        {value !== undefined && value !== "" && (value.length === maxLength) && <small className="text-info">Max length reached.</small>} 
       </div>
     </React.Fragment>
   );
