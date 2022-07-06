@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/Container';
 
 import { Link } from "react-router-dom";
 import { TopMenusLinks } from '../../_config/TopMenus';
-import Image from '../Image/Image';
+import Image from '../common/Image/Image';
 
 class SiteNavbar extends Component {
 

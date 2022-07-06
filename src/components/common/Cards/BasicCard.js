@@ -1,11 +1,11 @@
 import React from "react";
-import Image from '../../Image/Image';
+import Image from '../Image/Image';
 import CustomLink from "../Link/Link";
 
 const BasicCard = (props) => {
 
   let cData = props.data;
-  let cardClasses = 'card cui3 mb-3';
+  let cardClasses = 'card cui2 r_0 mb-3';
 
   if (cData) {
     if (cData.classes && cData.classes !== '') {
