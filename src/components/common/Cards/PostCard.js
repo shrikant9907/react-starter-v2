@@ -1,6 +1,7 @@
 import React from "react";
 import Image from '../Image/Image';
 import { Link } from "react-router-dom";
+import { AngleDoubleRightIcon, CalanderIcon, UserIcon } from "../../../_assets/icons/Icons";
 
 const PostCard = (props) => {
 
@@ -24,9 +25,9 @@ const PostCard = (props) => {
         </div>
         <div className="card-body pri_30 pli_30 pbi_30">
           <div className="f22 mb_10 text-primary">{cData?.title}</div>
-          <div class="text-muted px_5 py_5 mb_10 f14 d-flex justify-content-between"><span><i class="fa fa-user mr_5" aria-hidden="true"></i> Shrikant</span> <span><i class="fa fa-calendar mr_5" aria-hidden="true"></i> 1 Dec 2020</span></div>
+          <div class="text-muted px_5 py_5 mb_10 f14 d-flex justify-content-between"><span><UserIcon /> Shrikant</span> <span><CalanderIcon /> 1 Dec 2020</span></div>
           <div className="card-text mb_20">{cData?.text}</div>
-          <Link className="btn btn-primary btnui1 w-100 text-white" to="/blog/blogId">Read More...<i class="ml_5 fas fa-angle-double-right"></i></Link>
+          <Link className="btn btn-primary btnui1 w-100 text-white" to="/blog/blogId">Read More <AngleDoubleRightIcon /></Link>
         </div>
       </div>
     </React.Fragment>
