@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import AlertBox from '../Alert/AlertBox';
+import { Link } from 'react-router-dom';
+import JSONDebug from '../JSONDebug';
 
 export default function SignupForm(props) {
 
@@ -83,7 +85,7 @@ export default function SignupForm(props) {
 
     <div className="card cui2 py_30 px_20 rs-signup-form">
       <div className="card-body pb-0">
-        {formTitle !== '' && <div className="card-title text-center">{formTitle}</div>}
+        {formTitle !== '' && <div className="card-title text-primary text-uppercase text-center">{formTitle}</div>}
         <form className="fui fui2"
           action=""
           onSubmit={handleSubmit}
@@ -125,6 +127,10 @@ export default function SignupForm(props) {
           </div>
         </form>
       </div>
+      <div className="mb_20 d-flex align-items-center justify-content-center">
+        <span>Already have an account? <Link className='text-primary tdn' to="/login">Login</Link></span>
+      </div>
+      <JSONDebug data={formData} />
     </div>
 
   )

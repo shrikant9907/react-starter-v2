@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import AlertBox from '../Alert/AlertBox';
+import JSONDebug from '../JSONDebug';
+import Checkbox from './CheckBox/CheckBox';
 
 export default function LoginForm(props) {
 
@@ -11,6 +14,7 @@ export default function LoginForm(props) {
   const initFormData = {
     email: '',
     password: '',
+    rememberme: 'no'
   }
 
   const [formData, setFormData] = useState(initFormData);
@@ -42,7 +46,7 @@ export default function LoginForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
- 
+
     if (formData === null) {
       setError(true);
       return
@@ -59,7 +63,7 @@ export default function LoginForm(props) {
         return
       }
     }
- 
+
     sendLoginRequest();
 
   };
@@ -68,7 +72,7 @@ export default function LoginForm(props) {
 
     <div className="card cui2 py_30 px_20 rs-login-form">
       <div className="card-body pb-0">
-        {formTitle !== '' && <div className="card-title text-center">{formTitle}</div>}
+        {formTitle !== '' && <div className="card-title text-primary text-uppercase text-center">{formTitle}</div>}
         <form className="fui fui2"
           action=""
           onSubmit={handleSubmit}
@@ -90,11 +94,19 @@ export default function LoginForm(props) {
             {error && !formData?.password && <AlertBox type='danger' message={formMessage.emptyPassword} />}
             <input autoComplete='off' maxLength="15" onChange={(e) => handleFieldChange(e)} name="password" value={formData?.phone} type="password" className="form-control" placeholder="Enter your account password." />
           </div>
-         <div className="form-group d-flex align-items-center justify-content-center">
+          <div className="form-group d-flex align-items-top justify-content-between mbi_10">
+            <span><Checkbox value={formData.rememberme === 'no' ? 'yes' : 'no'} name="rememberme" onChange={(e) => handleFieldChange(e)} label="Remember Me" /></span>
+            <span><Link className='text-muted tdn' to="/forgot-password">Forgot Password?</Link></span>
+          </div>
+          <div className="form-group d-flex align-items-center justify-content-center">
             <input className="btn btn-primary btnui2" type="submit" name="submit" value="Login" />
           </div>
         </form>
+        <div className="mb_20 d-flex align-items-center justify-content-center">
+          <span>Don't have an account? <Link className='text-primary tdn' to="/signup">Sign up</Link></span>
+        </div>
       </div>
+      <JSONDebug data={formData} />
     </div>
 
   )
