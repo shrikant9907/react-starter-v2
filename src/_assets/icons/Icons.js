@@ -21,7 +21,7 @@ import AmericanExpressIconPng from '../../_assets/images/payment-icon5.png'
 import SearchIconPng from '../../_assets/images/search-icon.png'
 import NextIconSvg from '../../_assets/svg/next-icon.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendar, faShoppingCart, faUserAlt, faAngleDoubleRight, faSpinner, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import { faCalendar, faShoppingCart, faUserAlt, faAngleDoubleRight, faSpinner, faEye, faEyeSlash, faEnvelope, faPhone, faMapPin, faClock } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faTwitter, faYoutube, faInstagram, faGithub, faCodepen, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 
 
@@ -142,4 +142,20 @@ export const EyeIcon = () => {
 
 export const EyeSlashIcon = () => {
   return  <FontAwesomeIcon icon={faEyeSlash} />
+}
+
+export const MapPinIcon = () => {
+  return  <FontAwesomeIcon icon={faMapPin} />
+}
+
+export const PhoneIcon = () => {
+  return  <FontAwesomeIcon icon={faPhone} />
+}
+
+export const EnvelopeIcon = () => {
+  return  <FontAwesomeIcon icon={faEnvelope} />
+}
+
+export const ClockIcon = () => {
+  return  <FontAwesomeIcon icon={faClock} />
 }

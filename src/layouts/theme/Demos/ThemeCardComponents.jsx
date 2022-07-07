@@ -3,6 +3,7 @@ import BasicCard from '../../../components/common/Cards/BasicCard'
 import IconCard from '../../../components/common/Cards/IconCard/IconCard'
 import PostCard from '../../../components/common/Cards/PostCard'
 import TestimonialCard from '../../../components/common/Cards/TestimonialCard/TestimonialCard'
+import ContactDetailsCard from '../../../components/common/Cards/ContactDetailsCard/ContactDetailsCard'
 
 export default function ThemeCardComponents() {
   return (
@@ -43,6 +44,22 @@ export default function ThemeCardComponents() {
               text: 'Card Text',
               imgSrc: "http://via.placeholder.com/640x360",
               imgAlt: "Alt Text"
+            }} />
+        </div>
+        <div className="col-12 col-sm-6 col-md-4">
+          <ContactDetailsCard  data={{
+              heading1: "Contact Details",
+              address: 'Lorem, ipsum dolor sit amet consectetura orem, ipsum dolor sit amet consecteturae!',
+              contact: '+91 1234567890, +91 1234567890',
+              email: "example@email.com",
+              heading2: "Business Hours",
+              openingHours: [{
+                title: 'Monday - Friday',
+                desc: '10:00 am to 07:00 pm',
+              },{
+                title: 'Monday - Friday',
+                desc: '10:00 am to 07:00 pm',
+              }]
             }} />
         </div>
 
