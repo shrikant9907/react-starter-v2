@@ -8,7 +8,14 @@ export default function ContactForm(props) {
     formTitle = props.title;
   }
 
-  const [formData, setFormData] = useState(null);
+  const initFormData = {
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  }
+
+  const [formData, setFormData] = useState(initFormData);
   const [error, setError] = useState(false);
 
   const formMessage = {
@@ -21,22 +28,23 @@ export default function ContactForm(props) {
   }
 
   const sendMail = () => {
-    clearForm();
+
+    resetForm()
   }
 
-  const clearForm = () => {
-    setFormData(null);
+  const resetForm = () => {
     setError(false);
+    setFormData(initFormData);
   }
 
   const isValidEmail = (email) => {
     return /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email);
   }
 
-  const isValidPhone = (phone) => {
-    var regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    return regex.value.match(phone)
-  }
+  // const isValidPhone = (phone) => {
+  //   var regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  //   return regex.value.match(phone)
+  // }
 
   const handleFieldChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -44,8 +52,7 @@ export default function ContactForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('testse', formData)
-
+ 
     if (formData === null) {
       setError(true);
       return
@@ -113,7 +120,8 @@ export default function ContactForm(props) {
             {error && !formData?.message && <AlertBox type='danger' message={formMessage.emptyMessage} />}
             <textarea maxlength="500" rows={5} onChange={(e) => handleFieldChange(e)} placeholder="Message" value={formData?.message} name="message" className="form-control"></textarea>
           </div>
-          <div className="form-group">
+          <div className="form-group d-flex align-items-center justify-content-center">
+            <button onClick={() => resetForm()} className="btn btn-outline-primary me-2 btnui2" type="button" name="reset" value="Reset">Reset</button>
             <input className="btn btn-primary btnui2" type="submit" name="submit" value="Submit" />
           </div>
         </form>
