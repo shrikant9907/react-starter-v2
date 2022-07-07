@@ -1,7 +1,7 @@
 import React from 'react';
 import ThemeBasicComponents from './Demos/ThemeBasicComponents';
-// import ThemeCardComponents from './Demos/ThemeCardComponents';
-// import ThemeFormComponents from './Demos/ThemeFormComponents';
+import ThemeCardComponents from './Demos/ThemeCardComponents';
+import ThemeFormComponents from './Demos/ThemeFormComponents';
 
 const ThemeComponentsPage = (props) => {
 
@@ -12,9 +12,9 @@ const ThemeComponentsPage = (props) => {
 
           <ThemeBasicComponents />
     
-          {/* <ThemeFormComponents /> */}
+          <ThemeFormComponents />
 
-          {/* <ThemeCardComponents /> */}
+          <ThemeCardComponents />
           
         </div>
       </div>
