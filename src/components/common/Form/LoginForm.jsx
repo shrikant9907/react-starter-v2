@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { EyeIcon, EyeSlashIcon } from '../../../_assets/icons/Icons';
 import AlertBox from '../Alert/AlertBox';
 import JSONDebug from '../JSONDebug';
 import Checkbox from './CheckBox/CheckBox';
@@ -20,6 +21,7 @@ export default function LoginForm(props) {
   const [formData, setFormData] = useState(initFormData);
   const [error, setError] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const formMessage = {
     emptyEmail: "Email is a required field.",
@@ -93,12 +95,18 @@ export default function LoginForm(props) {
             {error && formData?.email && !isValidEmail(formData.email) && <AlertBox type='danger' message={formMessage.invalidEmail} />}
             <input maxLength="50" onChange={(e) => handleFieldChange(e)} name="email" value={formData?.email} type="email" className="form-control" placeholder="Enter your email." />
           </div>
-          <div className="form-group">
+          <div className="form-group password-field">
             <label>
               Password: <span className="text-danger">*</span>
             </label>
             {error && !formData?.password && <AlertBox type='danger' message={formMessage.emptyPassword} />}
-            <input autoComplete='off' maxLength="15" onChange={(e) => handleFieldChange(e)} name="password" value={formData?.phone} type="password" className="form-control" placeholder="Enter your account password." />
+            <div className="input-group">
+              <input autoComplete='off' maxLength="15" onChange={(e) => handleFieldChange(e)} type={showPassword ? 'text' : 'password'} value={formData?.phone} name="password" className="form-control" placeholder="Enter your account password." />
+              <span class="input-group-text border-0 bg_grey c_p">
+                {!showPassword && <i onClick={(e) => setShowPassword(true)}><EyeIcon /></i>}
+                {showPassword && <i onClick={(e) => setShowPassword(false)}><EyeSlashIcon /></i>}
+              </span>
+            </div>
           </div>
           <div className="form-group d-flex align-items-top justify-content-between mbi_10">
             <span><Checkbox value={formData.rememberme === 'no' ? 'yes' : 'no'} name="rememberme" onChange={(e) => handleFieldChange(e)} label="Remember Me" /></span>
