@@ -14,7 +14,16 @@ export default function ThemeBasicComponents(props) {
           <Loader text="Loading Page..." />
         </div>
         <div className="col-12 col-sm-6 col-md-4">
-          <SocialLinks />
+          <SocialLinks icons={
+            {
+              fbLink:"#",
+              twLink:"#",
+              igLink:"#",
+              ytLink:"#",
+              cpLink:"#",
+              ghLink:"#",
+            }
+          } />
         </div>
       </div>
     </React.Fragment>

@@ -5,11 +5,7 @@ import { CodepenIcon, FacebookIcon, GithubIcon, InstagramIcon, TwitterIcon, Yout
 export default function SocialLinks(props) {
 
   let socialIcons = props.icons;
-
-  socialIcons = {
-    fbLink: 'http://google.com'
-  }
-
+ 
   const handleLinkClick = (e, link) => {
     e.preventDefault();
     window.open(link); // Open new Tab
