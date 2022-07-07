@@ -24,7 +24,7 @@ const BasicTable = (props) => {
                 <tr>
                   {
                     head.map((tdItem, index) => {
-                      return <th> {tdItem} </th>
+                      return <th key={index}> {tdItem} </th>
                     })
                   }
                 </tr>

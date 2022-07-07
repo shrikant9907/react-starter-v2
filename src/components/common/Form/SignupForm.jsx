@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import AlertBox from '../Alert/AlertBox';
 
-export default function ContactForm(props) {
+export default function SignupForm(props) {
 
-  let formTitle = 'Get In Touch';
+  let formTitle = 'Create An Account';
   if (props.title) {
     formTitle = props.title;
   }
@@ -11,8 +11,8 @@ export default function ContactForm(props) {
   const initFormData = {
     name: '',
     email: '',
-    phone: '',
-    message: '',
+    password: '',
+    cpassword: '',
   }
 
   const [formData, setFormData] = useState(initFormData);
@@ -21,13 +21,14 @@ export default function ContactForm(props) {
   const formMessage = {
     emptyName: "Name is a required field.",
     emptyEmail: "Email is a required field.",
+    emptyPassword: "Password is a required field.",
+    emptyCPassword: "Confirm Password is a required field.",
+    passwordNotMatched: "Password and Confirm password not match.",
     invalidEmail: "Invalid email address.",
-    invalidPhone: "Invalid phone number.",
-    emptyMessage: "Message is a required field.",
-    formSuccess: "Message sent successfully. Thank you form contacting us.",
+    formSuccess: "Your account has been created. Redirecting to dashboard page.",
   }
 
-  const sendMail = () => {
+  const sendSignupRequest = () => {
 
     resetForm()
   }
@@ -41,13 +42,12 @@ export default function ContactForm(props) {
     return /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email);
   }
 
-  // const isValidPhone = (phone) => {
-  //   var regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-  //   return regex.value.match(phone)
-  // }
-
   const handleFieldChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
+
+  const isPasswordMatched = (password1, password2) => {
+    return (password1 === password2);
   }
 
   const handleSubmit = (e) => {
@@ -58,7 +58,7 @@ export default function ContactForm(props) {
       return
     }
 
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.email || !formData.password || !formData.cpassword) {
       setError(true);
       return
     }
@@ -70,14 +70,12 @@ export default function ContactForm(props) {
       }
     }
 
-    // if (formData.phone) {
-    //   if (!isValidPhone(formData.phone)) {
-    //     setError(true);
-    //     return
-    //   }
-    // }
+    if (formData.password && formData.cpassword && (formData.password !== formData.cpassword)) {
+      setError(true);
+      return
+    }
 
-    sendMail();
+    sendSignupRequest();
 
   };
 
@@ -85,7 +83,7 @@ export default function ContactForm(props) {
 
     <div className="card cui2 py_30 px_20">
       <div className="card-body pb-0">
-        {formTitle !== '' && <div className="card-title">{formTitle}</div>}
+        {formTitle !== '' && <div className="card-title text-center">{formTitle}</div>}
         <form className="fui fui2"
           action=""
           onSubmit={handleSubmit}
@@ -97,7 +95,7 @@ export default function ContactForm(props) {
               Name: <span className="text-danger">*</span>
             </label>
             {error && !formData?.name && <AlertBox type='danger' message={formMessage.emptyName} />}
-            <input maxLength="50" onChange={(e) => handleFieldChange(e)} name="name" value={formData?.name} type="text" className="form-control" placeholder="Name" />
+            <input maxLength="50" onChange={(e) => handleFieldChange(e)} name="name" value={formData?.name} type="text" className="form-control" placeholder="Enter your full name." />
           </div>
           <div className="form-group">
             <label>
@@ -105,24 +103,25 @@ export default function ContactForm(props) {
             </label>
             {error && !formData?.email && <AlertBox type='danger' message={formMessage.emptyEmail} />}
             {error && formData?.email && !isValidEmail(formData.email) && <AlertBox type='danger' message={formMessage.invalidEmail} />}
-            <input maxLength="50" onChange={(e) => handleFieldChange(e)} name="email" value={formData?.email} type="email" className="form-control" placeholder="Email" />
+            <input maxLength="50" onChange={(e) => handleFieldChange(e)} name="email" value={formData?.email} type="email" className="form-control" placeholder="Enter your email." />
           </div>
           <div className="form-group">
             <label>
-              Phone:
+              Password: <span className="text-danger">*</span>
             </label>
-            <input maxLength="15" onChange={(e) => handleFieldChange(e)} name="phone" value={formData?.phone} type="text" className="form-control" placeholder="Phone" />
+            {error && !formData?.password && <AlertBox type='danger' message={formMessage.emptyPassword} />}
+            <input autoComplete='off' maxLength="15" onChange={(e) => handleFieldChange(e)} name="password" value={formData?.password} type="password" className="form-control" placeholder="Enter a password." />
           </div>
           <div className="form-group">
             <label>
-              Message: <span className="text-danger">*</span>
+              Confirm Password: <span className="text-danger">*</span>
             </label>
-            {error && !formData?.message && <AlertBox type='danger' message={formMessage.emptyMessage} />}
-            <textarea maxLength="500" rows={5} onChange={(e) => handleFieldChange(e)} placeholder="Message" value={formData?.message} name="message" className="form-control"></textarea>
+            {error && !formData?.cpassword && <AlertBox type='danger' message={formMessage.emptyCPassword} />}
+            {error && formData?.password && formData?.cpassword && !isPasswordMatched(formData.password, formData.cpassword) && <AlertBox type='danger' message={formMessage.invalidEmail} />}
+            <input autoComplete='off' maxLength="15" onChange={(e) => handleFieldChange(e)} name="cpassword" value={formData?.cpassword} type="password" className="form-control" placeholder="Repeat your password." />
           </div>
           <div className="form-group d-flex align-items-center justify-content-center">
-            <button onClick={() => resetForm()} className="btn btn-outline-primary me-2 btnui2" type="button" name="reset" value="Reset">Reset</button>
-            <input className="btn btn-primary btnui2" type="submit" name="submit" value="Submit" />
+            <input className="btn btn-primary btnui2" type="submit" name="submit" value="Signup" />
           </div>
         </form>
       </div>

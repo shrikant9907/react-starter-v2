@@ -4,6 +4,8 @@ import Loader from '../../../components/common/Loader/Loader'
 import SocialLinks from '../../../components/common/Link/SocialLinks'
 import CustomPagination from '../../../components/common/Pagination/CustomPagination'
 import ContactForm from '../../../components/common/Form/ContactForm'
+import LoginForm from '../../../components/common/Form/LoginForm'
+import SignupForm from '../../../components/common/Form/SignupForm'
 
 export default function ThemeBasicComponents(props) {
   return (
@@ -18,20 +20,29 @@ export default function ThemeBasicComponents(props) {
         <div className="col-12 col-sm-6 col-md-4">
           <SocialLinks icons={
             {
-              fbLink:"#",
-              twLink:"#",
-              igLink:"#",
-              ytLink:"#",
-              cpLink:"#",
-              ghLink:"#",
+              fbLink: "#",
+              twLink: "#",
+              igLink: "#",
+              ytLink: "#",
+              cpLink: "#",
+              ghLink: "#",
             }
           } />
         </div>
         <div className="col-12 col-sm-6 col-md-4">
           <CustomPagination data={['test']} />
         </div>
+
+      </div>
+      <div className='row'>
         <div className="col-12 col-sm-6 col-md-4">
-          <ContactForm data={['test']} />
+          <ContactForm />
+        </div>
+        <div className="col-12 col-sm-6 col-md-4">
+          <LoginForm />
+        </div>
+        <div className="col-12 col-sm-6 col-md-4">
+          <SignupForm />
         </div>
       </div>
     </React.Fragment>
