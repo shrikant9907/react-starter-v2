@@ -2,6 +2,7 @@ import React from 'react'
 import AlertBox from '../../../components/common/Alert/AlertBox'
 import Loader from '../../../components/common/Loader/Loader'
 import SocialLinks from '../../../components/common/Link/SocialLinks'
+import CustomPagination from '../../../components/common/Pagination/CustomPagination'
 
 export default function ThemeBasicComponents(props) {
   return (
@@ -24,6 +25,9 @@ export default function ThemeBasicComponents(props) {
               ghLink:"#",
             }
           } />
+        </div>
+        <div className="col-12 col-sm-6 col-md-4">
+          <CustomPagination data={['test']} />
         </div>
       </div>
     </React.Fragment>
