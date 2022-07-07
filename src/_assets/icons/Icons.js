@@ -9,10 +9,10 @@ import GiftIconPng from '../../_assets/images/footer-icon3.png'
 import AppStorePng from '../../_assets/images/app-store-icon.png'
 import GooglePlayPng from '../../_assets/images/play-store-icon.png'
 import InstagramIconPng from '../../_assets/images/social-icon-1.png'
-import FacebookIconPng from '../../_assets/images/social-icon-2.png'
-import TwitterIconPng from '../../_assets/images/social-icon-3.png'
-import YoutubeIconPng from '../../_assets/images/social-icon-4.png'
-import LinkedInIconPng from '../../_assets/images/social-icon-5.png'
+// import FacebookIconPng from '../../_assets/images/social-icon-2.png'
+// import TwitterIconPng from '../../_assets/images/social-icon-3.png'
+// import YoutubeIconPng from '../../_assets/images/social-icon-4.png'
+// import LinkedInIconPng from '../../_assets/images/social-icon-5.png'
 import PaypalIconPng from '../../_assets/images/payment-icon1.png'
 import VisaIconPng from '../../_assets/images/payment-icon2.png'
 import DiscoverIconPng from '../../_assets/images/payment-icon3.png'
@@ -22,6 +22,7 @@ import SearchIconPng from '../../_assets/images/search-icon.png'
 import NextIconSvg from '../../_assets/svg/next-icon.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendar, faShoppingCart, faUserAlt, faAngleDoubleRight, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faFacebookF, faTwitter, faYoutube, faInstagram, faGithub, faCodepen, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 
 
 export const Logo = () => {
@@ -63,23 +64,36 @@ export const GooglePlay = () => {
 }
 
 export const InstagramIcon = () => {
-  return  <img src={InstagramIconPng} alt="Instagram" />
+  return  <FontAwesomeIcon icon={faInstagram} />
+  // return  <img src={InstagramIconPng} alt="Instagram" />
 }
 
 export const FacebookIcon = () => {
-  return  <img src={FacebookIconPng} alt="Facebook" />
+  return  <FontAwesomeIcon icon={faFacebookF} />
+  // return  <img src={FacebookIconPng} alt="Facebook" />
 }
 
 export const TwitterIcon = () => {
-  return  <img src={TwitterIconPng} alt="Twitter" />
+  return  <FontAwesomeIcon icon={faTwitter} />
+  // return  <img src={TwitterIconPng} alt="Twitter" />
 }
 
 export const YoutubeIcon = () => {
-  return  <img src={YoutubeIconPng} alt="Youtube" />
+  return  <FontAwesomeIcon icon={faYoutube} />
+  // return  <img src={YoutubeIconPng} alt="Youtube" />
 }
 
 export const LinkedInIcon = () => {
-  return  <img src={LinkedInIconPng} alt="LinkedIn" />
+  return  <FontAwesomeIcon icon={faLinkedinIn} />
+  // return  <img src={LinkedInIconPng} alt="LinkedIn" />
+}
+
+export const CodepenIcon = () => {
+  return  <FontAwesomeIcon icon={faCodepen} /> 
+}
+
+export const GithubIcon = () => {
+  return  <FontAwesomeIcon icon={faGithub} /> 
 }
 
 export const PaypalIcon = () => {

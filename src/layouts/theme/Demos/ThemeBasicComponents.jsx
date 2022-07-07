@@ -1,6 +1,7 @@
 import React from 'react'
 import AlertBox from '../../../components/common/Alert/AlertBox'
 import Loader from '../../../components/common/Loader/Loader'
+import SocialLinks from '../../../components/common/Link/SocialLinks'
 
 export default function ThemeBasicComponents(props) {
   return (
@@ -11,6 +12,9 @@ export default function ThemeBasicComponents(props) {
         </div>
         <div className="col-12 col-sm-6 col-md-4">
           <Loader text="Loading Page..." />
+        </div>
+        <div className="col-12 col-sm-6 col-md-4">
+          <SocialLinks />
         </div>
       </div>
     </React.Fragment>
