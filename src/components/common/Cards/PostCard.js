@@ -25,7 +25,7 @@ const PostCard = (props) => {
         </div>
         <div className="card-body pri_30 pli_30 pbi_30">
           <div className="f22 mb_10 text-primary">{cData?.title}</div>
-          <div class="text-muted px_5 py_5 mb_10 f14 d-flex justify-content-between"><span><UserIcon /> Shrikant</span> <span><CalanderIcon /> 1 Dec 2020</span></div>
+          <div className="text-muted px_5 py_5 mb_10 f14 d-flex justify-content-between"><span><UserIcon /> Shrikant</span> <span><CalanderIcon /> 1 Dec 2020</span></div>
           <div className="card-text mb_20">{cData?.text}</div>
           <Link className="btn btn-primary btnui1 w-100 text-white" to="/blog/blogId">Read More <AngleDoubleRightIcon /></Link>
         </div>

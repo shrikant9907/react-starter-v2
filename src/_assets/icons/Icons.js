@@ -21,7 +21,7 @@ import AmericanExpressIconPng from '../../_assets/images/payment-icon5.png'
 import SearchIconPng from '../../_assets/images/search-icon.png'
 import NextIconSvg from '../../_assets/svg/next-icon.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendar, faShoppingCart, faUserAlt, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
+import { faCalendar, faShoppingCart, faUserAlt, faAngleDoubleRight, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 
 export const Logo = () => {
@@ -116,4 +116,8 @@ export const CalanderIcon = () => {
 
 export const AngleDoubleRightIcon = () => {
   return  <FontAwesomeIcon icon={faAngleDoubleRight} />
+}
+
+export const SpinnerIcon = () => {
+  return  <FontAwesomeIcon icon={faSpinner} />
 }

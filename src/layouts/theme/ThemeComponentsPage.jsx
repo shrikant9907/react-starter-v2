@@ -1,5 +1,6 @@
 import React from 'react';
-import ThemeCardComponents from './Demos/ThemeCardComponents';
+import ThemeBasicComponents from './Demos/ThemeBasicComponents';
+// import ThemeCardComponents from './Demos/ThemeCardComponents';
 // import ThemeFormComponents from './Demos/ThemeFormComponents';
 
 const ThemeComponentsPage = (props) => {
@@ -9,9 +10,11 @@ const ThemeComponentsPage = (props) => {
       <div className='py-3 theme-components'>
         <div className='container'>
 
+          <ThemeBasicComponents />
+    
           {/* <ThemeFormComponents /> */}
 
-          <ThemeCardComponents />
+          {/* <ThemeCardComponents /> */}
           
         </div>
       </div>
