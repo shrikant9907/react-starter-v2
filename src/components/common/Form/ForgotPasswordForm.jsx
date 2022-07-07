@@ -16,21 +16,26 @@ export default function ForgotPasswordForm(props) {
 
   const [formData, setFormData] = useState(initFormData);
   const [error, setError] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(false);
 
   const formMessage = {
     emptyEmail: "Email is a required field.",
     invalidEmail: "Invalid email address.",
-    formSuccess: "Message sent successfully. Thank you form contacting us.",
+    formSuccess: "Reset password link has been sent your register email. Please check.",
   }
 
   const sendResetLinkRequest = () => {
-
+    setSubmitStatus(true)
     resetForm()
   }
 
   const resetForm = () => {
     setError(false);
     setFormData(initFormData);
+
+    setTimeout(() => {
+      setSubmitStatus(false)
+    }, 2000);
   }
 
   const isValidEmail = (email) => {
@@ -91,6 +96,7 @@ export default function ForgotPasswordForm(props) {
           <div className="text-center mb_10">
             <Link className='text-primary tdn' to="/login">Go Back To Login</Link>
           </div>
+          {submitStatus && <AlertBox type='success' message={formMessage.formSuccess} />}
         </form>
       </div>
       <JSONDebug data={formData} />

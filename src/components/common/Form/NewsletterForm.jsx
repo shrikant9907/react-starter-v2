@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import AlertBox from '../Alert/AlertBox';
 import JSONDebug from '../JSONDebug';
-import Checkbox from './CheckBox/CheckBox';
 
-export default function LoginForm(props) {
+export default function NewsletterForm(props) {
 
-  let formTitle = 'Login';
+  let formTitle = 'Get New Posts in Your Email';
   if (props.title) {
     formTitle = props.title;
   }
 
+  let formDesc = 'Jobs, Interview Questions, Tutorials etc. Join 46,000 other people!';
+  if (props.description) {
+    formDesc = props.description;
+  }
+
   const initFormData = {
     email: '',
-    password: '',
-    rememberme: 'no'
   }
 
   const [formData, setFormData] = useState(initFormData);
@@ -24,11 +25,10 @@ export default function LoginForm(props) {
   const formMessage = {
     emptyEmail: "Email is a required field.",
     invalidEmail: "Invalid email address.",
-    emptyPassword: "Password is a required field.",
-    formSuccess: "You are logged in successfully. Redirecting to dashboard page.",
+    formSuccess: "Thank for subscribing to our newsletter.",
   }
 
-  const sendLoginRequest = () => {
+  const sentSubscriptionRequest = () => {
     setSubmitStatus(true)
     resetForm()
   }
@@ -58,7 +58,7 @@ export default function LoginForm(props) {
       return
     }
 
-    if (!formData.email || !formData.password) {
+    if (!formData.email) {
       setError(true);
       return
     }
@@ -70,49 +70,34 @@ export default function LoginForm(props) {
       }
     }
 
-    sendLoginRequest();
+    sentSubscriptionRequest();
 
   };
 
   return (
 
-    <div className="card cui2 py_30 px_20 rs-login-form">
-      <div className="card-body pb-0">
-        {formTitle !== '' && <div className="card-title text-primary text-uppercase text-center">{formTitle}</div>}
-        <form className="fui fui2"
+    <div className="card cui2 rs-login-form">
+      <div className="card-body pri_30 pli_30 pti_30">
+        {formTitle !== '' && <div className="text_bold f18 mb_10 text-primary">{formTitle}</div>}
+        {formDesc !== '' && <p className="mb_20">{formDesc}</p>}
+        <form className="fui1 w-100 text-left"
           action=""
           onSubmit={handleSubmit}
           encType="multipart/form-data"
           autoComplete="off"
         >
           <div className="form-group">
-            <label>
-              Email: <span className="text-danger">*</span>
-            </label>
             {error && !formData?.email && <AlertBox type='danger' message={formMessage.emptyEmail} />}
             {error && formData?.email && !isValidEmail(formData.email) && <AlertBox type='danger' message={formMessage.invalidEmail} />}
             <input maxLength="50" onChange={(e) => handleFieldChange(e)} name="email" value={formData?.email} type="email" className="form-control" placeholder="Enter your email." />
           </div>
           <div className="form-group">
-            <label>
-              Password: <span className="text-danger">*</span>
-            </label>
-            {error && !formData?.password && <AlertBox type='danger' message={formMessage.emptyPassword} />}
-            <input autoComplete='off' maxLength="15" onChange={(e) => handleFieldChange(e)} name="password" value={formData?.phone} type="password" className="form-control" placeholder="Enter your account password." />
-          </div>
-          <div className="form-group d-flex align-items-top justify-content-between mbi_10">
-            <span><Checkbox value={formData.rememberme === 'no' ? 'yes' : 'no'} name="rememberme" onChange={(e) => handleFieldChange(e)} label="Remember Me" /></span>
-            <span><Link className='text-muted tdn' to="/forgot-password">Forgot Password?</Link></span>
-          </div>
-          <div className="form-group d-flex align-items-center justify-content-center">
-            <input className="btn btn-primary btnui2" type="submit" name="submit" value="Login" />
+            <input className="btn btn-primary btnui2 w-100" type="submit" name="submit" value="Subscribe Now" />
           </div>
           {submitStatus && <AlertBox type='success' message={formMessage.formSuccess} />}
         </form>
-        <div className="mb_20 d-flex align-items-center justify-content-center">
-          <span>Don't have an account? <Link className='text-primary tdn' to="/signup">Sign up</Link></span>
-        </div>
       </div>
+
       <JSONDebug data={formData} />
     </div>
 

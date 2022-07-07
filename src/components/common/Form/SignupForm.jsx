@@ -19,6 +19,7 @@ export default function SignupForm(props) {
 
   const [formData, setFormData] = useState(initFormData);
   const [error, setError] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(false);
 
   const formMessage = {
     emptyName: "Name is a required field.",
@@ -31,13 +32,17 @@ export default function SignupForm(props) {
   }
 
   const sendSignupRequest = () => {
-
+    setSubmitStatus(true)
     resetForm()
   }
 
   const resetForm = () => {
     setError(false);
     setFormData(initFormData);
+
+    setTimeout(() => {
+      setSubmitStatus(false)
+    }, 2000);
   }
 
   const isValidEmail = (email) => {
@@ -125,6 +130,7 @@ export default function SignupForm(props) {
           <div className="form-group d-flex align-items-center justify-content-center">
             <input className="btn btn-primary btnui2" type="submit" name="submit" value="Signup" />
           </div>
+          {submitStatus && <AlertBox type='success' message={formMessage.formSuccess} />}
         </form>
       </div>
       <div className="mb_20 d-flex align-items-center justify-content-center">

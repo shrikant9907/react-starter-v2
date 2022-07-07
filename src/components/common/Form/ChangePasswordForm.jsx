@@ -17,6 +17,7 @@ export default function ChangePasswordForm(props) {
 
   const [formData, setFormData] = useState(initFormData);
   const [error, setError] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(false);
 
   const formMessage = {
     emptyCurrentPassword: "Current is a required field.",
@@ -27,13 +28,17 @@ export default function ChangePasswordForm(props) {
   }
 
   const sendChangePasswordRequest = () => {
-
+    setSubmitStatus(true)
     resetForm()
   }
 
   const resetForm = () => {
     setError(false);
     setFormData(initFormData);
+    
+    setTimeout(() => {
+      setSubmitStatus(false)
+    }, 2000);
   }
 
   const handleFieldChange = (e) => {
@@ -90,7 +95,7 @@ export default function ChangePasswordForm(props) {
               Password: <span className="text-danger">*</span>
             </label>
             {error && !formData?.newPassword && <AlertBox type='danger' message={formMessage.emptyPassword} />}
-            <input autoComplete='off' maxLength="15" onChange={(e) => handleFieldChange(e)} name="newPassword" value={formData?.password} type="password" className="form-control" placeholder="Enter new password." />
+            <input autoComplete='off' maxLength="15" onChange={(e) => handleFieldChange(e)} name="newPassword" value={formData?.newPassword} type="password" className="form-control" placeholder="Enter new password." />
           </div>
           <div className="form-group">
             <label>
@@ -103,6 +108,7 @@ export default function ChangePasswordForm(props) {
           <div className="form-group d-flex align-items-center justify-content-center">
             <input className="btn btn-primary btnui2" type="submit" name="submit" value="Submit" />
           </div>
+          {submitStatus && <AlertBox type='success' message={formMessage.formSuccess} />}
         </form>
       </div>
       <JSONDebug data={formData} />

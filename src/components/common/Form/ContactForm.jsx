@@ -18,6 +18,7 @@ export default function ContactForm(props) {
 
   const [formData, setFormData] = useState(initFormData);
   const [error, setError] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(false);
 
   const formMessage = {
     emptyName: "Name is a required field.",
@@ -29,13 +30,17 @@ export default function ContactForm(props) {
   }
 
   const sendMail = () => {
-
+    setSubmitStatus(true)
     resetForm()
   }
 
   const resetForm = () => {
     setError(false);
     setFormData(initFormData);
+
+    setTimeout(() => {
+      setSubmitStatus(false)
+    }, 2000);
   }
 
   const isValidEmail = (email) => {
@@ -125,6 +130,7 @@ export default function ContactForm(props) {
             <button onClick={() => resetForm()} className="btn btn-outline-primary me-2 btnui2" type="button" name="reset" value="Reset">Reset</button>
             <input className="btn btn-primary btnui2" type="submit" name="submit" value="Submit" />
           </div>
+          {submitStatus && <AlertBox type='success' message={formMessage.formSuccess} />}
         </form>
       </div>
       <JSONDebug data={formData} />
