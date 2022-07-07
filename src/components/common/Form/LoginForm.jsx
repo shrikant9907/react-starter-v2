@@ -66,7 +66,7 @@ export default function LoginForm(props) {
 
   return (
 
-    <div className="card cui2 py_30 px_20">
+    <div className="card cui2 py_30 px_20 rs-login-form">
       <div className="card-body pb-0">
         {formTitle !== '' && <div className="card-title text-center">{formTitle}</div>}
         <form className="fui fui2"

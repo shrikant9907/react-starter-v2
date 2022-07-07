@@ -83,7 +83,7 @@ export default function ContactForm(props) {
 
   return (
 
-    <div className="card cui2 py_30 px_20">
+    <div className="card cui2 py_30 px_20 rs-contact-form">
       <div className="card-body pb-0">
         {formTitle !== '' && <div className="card-title">{formTitle}</div>}
         <form className="fui fui2"
