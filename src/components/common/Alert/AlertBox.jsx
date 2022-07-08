@@ -3,12 +3,16 @@ import { toast } from 'react-toastify';
 
 export default function AlertBox(props) {
 
-  let alertClasses = 'alert alertui1 dismissible fade show ';
+  let alertClasses = 'alert alertui1 ';
 
   if (props.type && props.type !== '') {
     alertClasses += `alert-${props.type}`;
   } else {
     alertClasses += `alert-success`;
+  }
+
+  if (props.dismissible) {
+    alertClasses += ' dismissible fade show';
   }
 
   const handleAlertClose = () => {

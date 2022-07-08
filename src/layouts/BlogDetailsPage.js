@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { BreadcrumbBar } from '../components/common/Breadcrumb';
 import PostCard from '../components/common/Cards/PostCard';
+import LeaveAReplyForm from '../components/common/Form/LeaveAReplyForm';
 import { fetchPost } from '../_actions/blogAction';
 
 const BlogDetailsPage = (props) => {
@@ -37,6 +38,7 @@ const BlogDetailsPage = (props) => {
                     date: '23 Jul 2022',
                   }
                 } />
+                <LeaveAReplyForm />
             </div>
             <div className="col-12 col-sm-6 col-md-4">
               Sidebar
