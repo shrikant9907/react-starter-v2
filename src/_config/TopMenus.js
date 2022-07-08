@@ -1,4 +1,4 @@
-import ContactPage from "../layouts/ContactPage"; 
+import ThankYouPage from "../layouts/ThankYouPage";  
 import ThemeComponentsPage from "../layouts/theme/ThemeComponentsPage";
 
 // Top Menu Paths
@@ -6,7 +6,7 @@ export const TopMenusRoutes = [
   {
     path: "/",
     exact: true,
-    element: <ContactPage />
+    element: <ThankYouPage />
     // element: <ThemeComponentsPage />
   },
 ]
