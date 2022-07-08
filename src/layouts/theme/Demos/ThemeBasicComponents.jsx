@@ -9,6 +9,7 @@ import SignupForm from '../../../components/common/Form/SignupForm'
 import ForgotPasswordForm from '../../../components/common/Form/ForgotPasswordForm'
 import ChangePasswordForm from '../../../components/common/Form/ChangePasswordForm'
 import NewsletterForm from '../../../components/common/Form/NewsletterForm'
+import OTPVerificationForm from '../../../components/common/Form/OTPVerificationForm'
 
 export default function ThemeBasicComponents(props) {
   return (
@@ -55,6 +56,9 @@ export default function ThemeBasicComponents(props) {
         </div>
         <div className="col-12 col-sm-6 col-md-4">
           <NewsletterForm />
+        </div>
+        <div className="col-12 col-sm-6 col-md-4">
+          <OTPVerificationForm />
         </div>
       </div>
     </React.Fragment>
