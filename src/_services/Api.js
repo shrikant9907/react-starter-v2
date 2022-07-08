@@ -1,10 +1,8 @@
 import axios from 'axios';
-// import  ApiServices  from  './_apiServices';
-// const  Api  =  new  ApiServices();
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
-class Api {
+class ApiServices {
 
   getToken = () => {
     let userToken;
@@ -77,4 +75,6 @@ class Api {
     }
   }
 }
+
+const  Api  =  new  ApiServices();
 export default Api;

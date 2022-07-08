@@ -102,7 +102,7 @@ export default function LoginForm(props) {
             {error && !formData?.password && <AlertBox type='danger' message={formMessage.emptyPassword} />}
             <div className="input-group">
               <input autoComplete='off' maxLength="15" onChange={(e) => handleFieldChange(e)} type={showPassword ? 'text' : 'password'} value={formData?.phone} name="password" className="form-control" placeholder="Enter your account password." />
-              <span class="input-group-text border-0 bg_grey c_p">
+              <span className="input-group-text border-0 bg_grey c_p">
                 {!showPassword && <i onClick={(e) => setShowPassword(true)}><EyeIcon /></i>}
                 {showPassword && <i onClick={(e) => setShowPassword(false)}><EyeSlashIcon /></i>}
               </span>

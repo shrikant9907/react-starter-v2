@@ -4,7 +4,7 @@ class Image extends Component {
   render() {
     return (
       <Fragment>
-        <img className={this.props.classes} src={this.props.src} alt={this.props.alt} />
+        <img className={this.props.className} src={this.props.src} alt={this.props.alt} />
       </Fragment>
     );
   }
