@@ -3,14 +3,14 @@ import { ClockIcon, EnvelopeIcon, MapPinIcon, PhoneIcon } from '../../../../_ass
 
 const ContactDetailsCard = (props) => {
 
-  const { heading1, address, contact, email, heading2, openingHours } = props.data;
+  const { heading1, address, contact, email, heading2, openingHours, hideBottomHr } = props.data;
 
   return (
 
     <div className="card cui2 py_20 px_20">
       <div className="card-body">
         <div className="card-title mbi_5">
-          <span className="text_normal">{heading1}</span>
+        {heading1 !== '' && <span className="text_normal">{heading1}</span>}
         </div>
         <ul className="listing licons">
           {address !== '' && <li className="list-item">
@@ -29,7 +29,7 @@ const ContactDetailsCard = (props) => {
           </li>
           }
         </ul>
-        <hr />
+        {!hideBottomHr && <hr /> }
         {heading2 !== '' && <div className="card-title mbi_5">
           <span className="text_normal">Business Hours</span>
         </div>
