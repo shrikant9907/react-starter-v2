@@ -21,7 +21,7 @@ export const BlogRoutings = [
     element: <BlogPage />
   },
   {
-    path: "/blog:/blogId",
+    path: "/blog/:id",
     element: <BlogDetailsPage />
   },
   {

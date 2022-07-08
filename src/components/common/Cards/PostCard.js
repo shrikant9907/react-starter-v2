@@ -9,8 +9,8 @@ const PostCard = (props) => {
   let cardClasses = 'card cui2 r_0 mb_20';
 
   if (cData) {
-    if (cData.classes && cData.classes !== '') {
-      cardClasses = cData.classes;
+    if (props.className && props.className !== '') {
+      cardClasses = props.className;
     }
   }
 
@@ -18,7 +18,7 @@ const PostCard = (props) => {
     <React.Fragment>
       <div className={cardClasses}>
         <div className="mx-auto text-center">
-          {cData?.imgSrc && <Link to={`/blog/${cData.id}`} className="d-inline-block"><Image src={cData?.imgSrc} alt={cData?.imgAlt} classes="card-img-top r_0" /></Link>}
+          {cData?.imgSrc && <Link to={`/blog/${cData.id}`} className="d-inline-block"><Image src={cData?.imgSrc} alt={cData?.imgAlt} className={props.imgClassName} /></Link>}
           <div className="card-icon position-absolute">
             <i className="fas fa-quote-left"></i>
           </div>
@@ -32,7 +32,7 @@ const PostCard = (props) => {
             </div>
           }
           <div className="card-text mb_20">{cData?.text}</div>
-          <Link className="btn btn-primary btnui1 text-white" to={`/blog/${cData.id}`}>{cData.btnLabel ? cData.btnLabel : 'Read More'} <AngleDoubleRightIcon /></Link>
+          { !props.hideButton && <Link className="btn btn-primary btnui1 text-white" to={`/blog/${cData.id}`}>{cData.btnLabel ? cData.btnLabel : 'Read More'} <AngleDoubleRightIcon /></Link>}
         </div>
       </div>
     </React.Fragment>

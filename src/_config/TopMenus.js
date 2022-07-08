@@ -1,4 +1,3 @@
-import BlogPage from "../layouts/BlogPage";
 import ThemeComponentsPage from "../layouts/theme/ThemeComponentsPage";
 
 // Top Menu Paths
@@ -6,7 +5,7 @@ export const TopMenusRoutes = [
   {
     path: "/",
     exact: true,
-    element: <BlogPage />
+    element: <ThemeComponentsPage />
   },
 ]
 

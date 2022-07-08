@@ -2,18 +2,19 @@ import * as actionType from "../_actionTypes";
 
 const initialState = {
   isLoading: true,
-  posts: []
+  posts: [],
+  post: {}
 }
 
 // Blog Reducers
 const blogReducer = (state = initialState, action) => {
 
-  switch(action.type) {
+  switch (action.type) {
 
     case actionType.ADD_POST:
-      return { 
-        ...state, 
-        posts: [action.payload, ...state.posts] 
+      return {
+        ...state,
+        posts: [action.payload, ...state.posts]
       }
 
     case actionType.EDIT_POST:
@@ -27,7 +28,7 @@ const blogReducer = (state = initialState, action) => {
       });
       return {
         ...state,
-        posts:  newPosts
+        posts: newPosts
       }
 
     case actionType.DELETE_POST:
@@ -38,16 +39,22 @@ const blogReducer = (state = initialState, action) => {
 
     case actionType.SET_POST:
       return {
-        ...state, 
-        posts: action.payload 
+        ...state,
+        post: action.payload
+      }
+
+    case actionType.SET_POSTS:
+      return {
+        ...state,
+        posts: action.payload
       }
 
     case actionType.FETCH_POSTS:
       return {
-        ...state, 
-        posts: action.payload 
+        ...state,
+        posts: action.payload
       }
-  
+
 
     default:
       return state;
