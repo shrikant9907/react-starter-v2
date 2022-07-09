@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { TopMenusRoutes } from './_config/TopMenus';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SiteNavbar from './components/Navbar/Navbar';
+import { BlogRoutings } from './_config/BlogMenus';
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
         <Routes>
           {/* Top Menu Routes Configuration is in _config/TopMenus.js */}
           {
-            TopMenusRoutes && TopMenusRoutes.map((route, ridx) => {
+            BlogRoutings && BlogRoutings.map((route, ridx) => {
               return <Route {...route} key={ridx} />
             })
           }

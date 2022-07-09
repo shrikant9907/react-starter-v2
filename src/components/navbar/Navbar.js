@@ -7,8 +7,8 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 
 import { Link } from "react-router-dom";
-import { TopMenusLinks } from '../../_config/TopMenus';
 import Image from '../common/Image/Image';
+import { BlogMenuLinks } from '../../_config/BlogMenus';
 
 class SiteNavbar extends Component {
 
@@ -26,7 +26,7 @@ class SiteNavbar extends Component {
   render() {
 
     // Top Menu Link configuration is given in _config/TopMenus.js folder
-    const navItems = TopMenusLinks;
+    const navItems = BlogMenuLinks;
 
     let logo;
     if (this.state.logotype === 'image') {
