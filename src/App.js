@@ -7,21 +7,21 @@ import NavSidebar from './components/NavSidebar/NavSidebar';
 
 const App = () => {
   return (
-    <React.Fragment>
+    <div className='bodysidebar'>
       <Router>
-        <div className="bodysidebar">
           <NavSidebar />
-          <Routes>
-            {
-              TopMenusRoutes && TopMenusRoutes.map((route, ridx) => {
-                return <Route {...route} key={ridx} />
-              })
-            }
-          </Routes>
-        </div>
+          <div className="page pt_40 px_20">
+            <Routes>
+              {
+                TopMenusRoutes && TopMenusRoutes.map((route, ridx) => {
+                  return <Route {...route} key={ridx} />
+                })
+              }
+            </Routes>
+          </div>
       </Router>
       <ToastContainer />
-    </React.Fragment>
+    </div>
   );
 }
 export default App;

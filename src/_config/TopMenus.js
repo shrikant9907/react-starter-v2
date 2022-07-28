@@ -1,11 +1,23 @@
-import ThemeComponentsPage from "../layouts/theme/ThemeComponentsPage";
+import PageNotFound from "../layouts/PageNotFound";
+import { AlertPage } from "../pages/AlertPage";
 
 // Top Menu Paths
 export const TopMenusRoutes = [
   {
     path: "/",
-    exact: true,
-    element: <ThemeComponentsPage />
+    element: <AlertPage />
+  },
+  {
+    path: "/alerts",
+    element: <AlertPage />
+  },
+  {
+    path: "/breadcrum",
+    element: <AlertPage />
+  },
+  {
+    path: "/*",
+    element: <PageNotFound />
   },
 ]
 

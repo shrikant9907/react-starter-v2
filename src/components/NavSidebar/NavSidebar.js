@@ -6,7 +6,7 @@ const NavSidebar = () => {
   return (
 <div className="flex-shrink-0 bg-light sidebar nooverlay active">
     <div className="sbheader">
-      <Link className="shlink" to="/">
+      <Link className="shlink text-center" to="/">
         <span className="shtext">W3UI</span>
       </Link>
     </div>
