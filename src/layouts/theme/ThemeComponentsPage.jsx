@@ -8,14 +8,10 @@ const ThemeComponentsPage = (props) => {
   return (
     <>
       <div className='py-3 theme-components'>
-        <div className='container'>
-
+        <div className='container-fluid'>
           <ThemeBasicComponents />
-    
           <ThemeFormComponents />
-
           <ThemeCardComponents />
-          
         </div>
       </div>
     </>
