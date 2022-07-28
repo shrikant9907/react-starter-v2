@@ -2,7 +2,8 @@ import React from 'react'
 
 const TablePage = () => {
   return (
-    <div>Breadcrumb</div>
+    <div>
+    </div>
   )
 }
 

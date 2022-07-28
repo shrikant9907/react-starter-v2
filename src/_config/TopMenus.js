@@ -9,6 +9,7 @@ import ListingPage from "../pages/ListingPage";
 import LoaderPage from "../pages/LoaderPage";
 import ModalPage from "../pages/ModalPage";
 import PricingTablePage from "../pages/PricingTablePage";
+import ProgressBarPage from "../pages/ProgressBarPage";
 import SocialIconPage from "../pages/SocialIconPage";
 import StarIconPage from "../pages/StarPage";
 import TablePage from "../pages/TablePage";
@@ -44,6 +45,10 @@ export const TopMenusRoutes = [
     element: <PricingTablePage />
   },
   {
+    path: "/progress-bar",
+    element: <ProgressBarPage />
+  },
+  {
     path: "/accordion",
     element: <AccordionPage />
   },
@@ -60,7 +65,7 @@ export const TopMenusRoutes = [
     element: <SocialIconPage />
   },
   {
-    path: "/modals",
+    path: "/modal",
     element: <ModalPage />
   },
   {
