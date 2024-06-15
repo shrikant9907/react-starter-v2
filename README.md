@@ -12,10 +12,10 @@ React Starter Template for Front End Web Application.
 ## How to start the project?
 
 ### Take a clone
-https://github.com/shrikant9907/react-starter.git
+https://github.com/shrikant9907/react-starter-v2.git
 
 ### Enter to the directory 
-`cd react-starter`
+`cd react-starter-v2`
 
 ### Install Packages
 `npm install`

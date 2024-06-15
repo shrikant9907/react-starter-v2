@@ -7,6 +7,11 @@ export const TopMenusRoutes = [
     exact: true,
     element: <ThemeComponentsPage />
   },
+  {
+    path: "/react-starter-v2",
+    exact: true,
+    element: <ThemeComponentsPage />
+  },
 ]
 
 // Top Menu Links 
