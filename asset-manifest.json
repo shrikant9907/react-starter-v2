@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-starter-v2/static/css/main.1510a5e3.css",
-    "main.js": "/react-starter-v2/static/js/main.2067ec25.js",
+    "main.js": "/react-starter-v2/static/js/main.f613ed4f.js",
     "static/media/play-store-icon.png": "/react-starter-v2/static/media/play-store-icon.230c46590731f78b2ee1.png",
     "static/media/app-store-icon.png": "/react-starter-v2/static/media/app-store-icon.94d20338df96d329dae1.png",
     "static/media/logo.svg": "/react-starter-v2/static/media/logo.ddccab419392b97f96219469534316b1.svg",
@@ -9,10 +9,10 @@
     "static/media/next-icon.svg": "/react-starter-v2/static/media/next-icon.2b917372177e71cfe425b0963b315605.svg",
     "index.html": "/react-starter-v2/index.html",
     "main.1510a5e3.css.map": "/react-starter-v2/static/css/main.1510a5e3.css.map",
-    "main.2067ec25.js.map": "/react-starter-v2/static/js/main.2067ec25.js.map"
+    "main.f613ed4f.js.map": "/react-starter-v2/static/js/main.f613ed4f.js.map"
   },
   "entrypoints": [
     "static/css/main.1510a5e3.css",
-    "static/js/main.2067ec25.js"
+    "static/js/main.f613ed4f.js"
   ]
 }
